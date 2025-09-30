@@ -57,3 +57,28 @@ export const logout  = async (req,res)=>{
     }
    
 }
+
+export const updateUser = async (req,res)=>{
+    const {skills = [], role, email} = req.body
+    if(req.user?.role !== "admin"){
+        res.status(403).json({error:"forbidded"})
+        const getUser = await User.findOne({email})
+        if(!getUser){
+            res.json({error:"user dosent exist"})
+        }
+        await User.updateOne({email},{skills: skills.length ? skills: User.skills, role})
+    }
+}
+
+export const getUser = async (req,res)=>{
+    try {
+        if(req.user.role !== "admin"){
+            res.json({error: "forbidden"})
+            const users = await User.find().select("-password")
+            return res.json(users)
+        }
+    } catch (error) {
+         res.status(403).json({error: "forbidden", details: error.message})
+    
+    }
+} 
