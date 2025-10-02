@@ -11,4 +11,4 @@ helpfullNotes: String,
 relatedSkills: [String]
 })
 
-export default mongoose.model("ticket", ticketSchema) 
+export default mongoose.model("Ticket", ticketSchema) 
