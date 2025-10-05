@@ -56,7 +56,7 @@ Ticket information:
     return JSON.parse(jsonString);
   } catch (e) {
     console.log("Failed to parse JSON from AI response" + e.message);
-    return null; // watch out for this
+    return null;
   }
 };
 

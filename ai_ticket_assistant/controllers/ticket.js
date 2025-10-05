@@ -55,7 +55,8 @@ export const getTicket = async (req,res)=>{
         res.status(404).json({msg:"ticket not found"})
     }
     } catch (error) {
-        
+         console.error("error fetching the ticket", error.message)
+        res.status(500).json({msg:"Internal server error"})
     }
     
 }
