@@ -1,10 +1,10 @@
 import { inngest } from "../client.js";
-import User from "../../models/user"
+import User from "../../models/user.js"
 import { NonRetriableError } from "inngest";
-import { sendmail } from "../../utils/mailer";
+import { sendmail } from "../../utils/mailer.js";
     export const onUserSignup = inngest.createFunction(
         {id: "onUserSignup", retries : 2},
-        {event: User/signup},
+        {event: "user/signup"},
         async({event, step})=>{
             try {
                 const {email} = event.data

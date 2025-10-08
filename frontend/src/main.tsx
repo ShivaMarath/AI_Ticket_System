@@ -2,12 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import CheckAuth from './components/checkAuth'
-import Tickets from "./pages/tickets"
-import TicketDetailsPage from './pages/ticket'
+import CheckAuth from './components/CheckAuth'
+import Tickets from "./pages/Tickets"
+import TicketDetailsPage from './pages/Ticket'
 import Login from './pages/Login'
-import Singnup from './pages/singnup'
-import Admin from './pages/admin'
+import Singnup from './pages/Singnup'
+import Admin from './pages/Admin'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -22,7 +22,7 @@ createRoot(document.getElementById('root')!).render(
       element={<CheckAuth protectedRoute={true}>
         <TicketDetailsPage/>
       </CheckAuth>} />
-
+ 
       <Route path='/login'
       element={<CheckAuth protectedRoute={false}>
         <Login/>
