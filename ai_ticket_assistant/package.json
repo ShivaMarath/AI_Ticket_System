@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon index.js",
+    "dev": "nodemon index.js",
     "inngest-dev": "npx inngest-cli@latest dev"
   },
   "keywords": [],
@@ -23,8 +23,8 @@
     "mongoose": "^8.18.2",
     "nodemailer": "^7.0.6",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "inngest-cli": "^1.12.1"
   }
-
-
-
 }
